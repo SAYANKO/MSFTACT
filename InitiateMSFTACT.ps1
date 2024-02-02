@@ -9,7 +9,7 @@ $DownloadURL2 = 'https://raw.githubusercontent.com/SAYANKO/MSFTACT/main/MSFT_ACT
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
-$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\MAS_$rand.cmd" } else { "$env:TEMP\MAS_$rand.cmd" }
+$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\MSFTACT_$rand.cmd" } else { "$env:TEMP\MSFTACT_$rand.cmd" }
 
 try {
     $response = Invoke-WebRequest -Uri $DownloadURL -UseBasicParsing
