@@ -384,18 +384,18 @@ goto :Extract$OEM$2
 cls
 set "_dir=!_desktop_!\$OEM$\$$\Setup\Scripts"
 md "!_dir!\"
-copy /y /b "!_batf!" "!_dir!\MAS_AIO.cmd" %nul%
+copy /y /b "!_batf!" "!_dir!\MSFT_Act.cmd" %nul%
 
 (
 echo @echo off
 echo fltmc ^>nul ^|^| exit /b
-echo call "%%~dp0MAS_AIO.cmd" %para%
+echo call "%%~dp0MSFT_Act.cmd" %para%
 echo cd \
 echo ^(goto^) 2^>nul ^& ^(if "%%~dp0"=="%%SystemRoot%%\Setup\Scripts\" rd /s /q "%%~dp0"^)
 )>"!_dir!\SetupComplete.cmd"
 
 set _error=
-if not exist "!_dir!\MAS_AIO.cmd" set _error=1
+if not exist "!_dir!\MSFT_Act.cmd" set _error=1
 if not exist "!_dir!\SetupComplete.cmd" set _error=1
 
 if defined _error (
